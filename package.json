@@ -1,6 +1,6 @@
 {
-  "name": "easy-rbac",
-  "version": "2.1.2",
+  "name": "ds-rbac",
+  "version": "0.0.1",
   "description": "RBAC implementation for Node.js",
   "main": "lib/rbac.js",
   "scripts": {
@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DeadAlready/easy-rbac.git"
+    "url": "git+https://github.com/fthuin/easy-rbac.git"
   },
   "keywords": [
     "rbac"
   ],
   "author": "Karl Düüna",
+  "contributors": ["fthuin"],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DeadAlready/easy-rbac/issues"
+    "url": "https://github.com/fthuin/easy-rbac/issues"
   },
-  "homepage": "https://github.com/DeadAlready/easy-rbac#readme",
+  "homepage": "https://github.com/fthuin/easy-rbac#readme",
   "dependencies": {
-    "debug": "^2.2.0",
     "q": "^1.4.1"
   },
   "devDependencies": {
