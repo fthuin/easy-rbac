@@ -14,13 +14,16 @@
     "rbac"
   ],
   "author": "Karl Düüna",
-  "contributors": ["fthuin"],
+  "contributors": [
+    "fthuin"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fthuin/easy-rbac/issues"
   },
   "homepage": "https://github.com/fthuin/easy-rbac#readme",
   "dependencies": {
+    "lodash": "^4.17.4",
     "q": "^1.4.1"
   },
   "devDependencies": {
