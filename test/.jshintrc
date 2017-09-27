@@ -1,0 +1,9 @@
+{
+    "node": true,
+    "browser": true,
+    "strict": true,
+    "globals": {
+        "it": false,
+        "describe": false
+    }
+}
