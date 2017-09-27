@@ -251,7 +251,7 @@ describe('RBAC async', function() {
             })).can('manager', 'post:what').then(function () {
                 done(new Error('Should not be allowed'));
             }, function (err) {
-                if(err.message === 'unauthorized') {
+                if(err.message === "Q can't get fulfillment value from any promise, all promises were rejected. Last error message: unauthorized") {
                     done();
                     return;
                 }
