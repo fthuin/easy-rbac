@@ -1,28 +1,39 @@
 'use strict';
 
-var roles = {
+const Q = require('q');
+
+var roles = {};
+
+roles.agenda = {
     user: {
-        can: ['account:add', 'account:save', 'account:delete', 'post:add', {
-                name: 'post:save',
-                when: function(params, callback) {
-                    setImmediate(callback, null, params.ownerId === params.postId);
-                }
-            },
-            {
-                name: 'post:create',
-                when: function(params, callback) {
-                    setImmediate(callback, null, params.ownerId === params.userId);
-                }
-            }
-        ]
+        can: ['appointment:watch']
     },
-    manager: {
-        can: ['post:save', 'post:delete'],
-        inherits: ['user']
+    secretary: {
+        can: ['appointment:add', {
+            name: 'appointment:delete',
+            when: function(params) {
+                return params.userId === params.ownerId;
+            }
+        }],
+        inherits: ['agenda.user']
     },
     admin: {
-        can: ['rule the world'],
-        inherits: ['manager']
+        can: ['agenda:setSecretary', 'agenda:setAdmin'],
+        inherits: ['agenda.secretary']
+    }
+};
+
+roles.members = {
+    user: {
+        can: ['watch']
+    },
+    moderator: {
+        can: ['member:delete', 'member:add'],
+        inherits: ['members.user']
+    },
+    admin: {
+        can: ['member:setModerator', 'member:setAdmin'],
+        inherits: ['members.moderator']
     }
 };
 
